@@ -13,7 +13,7 @@ const Tesseract = ({ size }) => {
                 factorX={0.02}
                 factorY={0.02}
                 position="relative"
-                zIndex="100"
+                zIndex={50}
                 transform={`translateZ(-10px) scale(0.5))`}
             >
                 <svg
@@ -38,7 +38,7 @@ const Tesseract = ({ size }) => {
                 factorX={0.04}
                 factorY={0.04}
                 position="absolute"
-                zIndex="100"
+                zIndex="50"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ const Tesseract = ({ size }) => {
                 w="100px"
                 h="100px"
                 position="absolute"
-                zIndex="100"
+                zIndex="50"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

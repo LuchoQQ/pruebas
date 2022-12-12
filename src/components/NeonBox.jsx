@@ -1,7 +1,7 @@
 import { Box, Flex, Image, keyframes, Text, useTheme } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
-const NeonBox = ({ size, color }) => {
+const NeonBox = ({ size, color, shadow }) => {
     const theme = useTheme();
 
     const animationKeyframes = keyframes`
@@ -21,7 +21,7 @@ const NeonBox = ({ size, color }) => {
 
 `;
 
-    const animation = `${animationKeyframes} 4s linear infinite`;
+    const animation = `${animationKeyframes} 8s linear infinite`;
     return (
         <>
             <Box
@@ -52,12 +52,12 @@ const NeonBox = ({ size, color }) => {
                         left: "0",
                         width: `${size}px`,
                         height: `${size}px`,
-                        background: `rgb(${color})`,
+                        background: `rgb(${shadow})`,
                         transform: `translateZ(${
                             size - size * 2 - size / 3
                         }px)`,
                         filter: "blur(20px)",
-                        boxShadow: `0 0 20px 20px rgba(${color}, 0.2), 0 0 20px 20px rgba(${color}, 0.4), 0 0 20px 20px rgba(${color}, 0.6), 0 0 20px 20px rgba(${color}, 0.8)`,
+                        boxShadow: `0 0 20px 20px rgba(${shadow}, 0.2), 0 0 20px 20px rgba(${shadow}, 0.4), 0 0 20px 20px rgba(${shadow}, 0.6), 0 0 20px 20px rgba(${shadow}, 0.8)`,
                     }}
                 />
                 <Box
@@ -75,6 +75,7 @@ const NeonBox = ({ size, color }) => {
                         left="0"
                         width="100%"
                         h="100%"
+                        transition="all 0.5s ease-in-out"
                         _groupHover={{
                             background: `linear-gradient(#090909, rgba(${color}))`,
                         }}

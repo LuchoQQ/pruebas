@@ -11,51 +11,55 @@ function Homepage() {
         setMousePosition({ x: e.clientX, y: e.clientY });
     }
     window.addEventListener("mousemove", parallax);
+
     const theme = useTheme();
-    // parallax effect on mouse scroll (not working)
+
 
     return (
         <>
-            <Flex bg="#090909" h='200vh'>
-                    <Flex as={MouseParallaxContainer} w="100vw" h="100vh">
-                        <Flex
-                            as={MouseParallaxChild}
-                            factorX={0.01}
-                            factorY={0.01}
-                            w="40%"
-                            h="100%"
-                            flexDir="column"
-                            ml="10rem"
-                            zIndex={1000}
-                            backdropFilter="blur(10px)"
+            <Flex bg="#090909"  w="100%" h='100vh' id='home'>
+                <Flex as={MouseParallaxContainer} w='100%'>
+                    <Flex
+                        as={MouseParallaxChild}
+                        factorX={0.01}
+                        factorY={0.01}
+                        w="40%"
+                        h='50%'
+                        backdropFilter={"blur(10px)"}
+                        flexDir="column"
+                        ml="10rem"
+                        zIndex={100}
+                        position="relative"
+                        top="35%"
+                    >
+                        <Text
+                            fontFamily={theme.fonts.primary}
+                            fontSize="2xl"
+                            color="#fff"
+                            letterSpacing={-1}
                         >
-                            <Text
-                                fontFamily={theme.fonts.primary}
-                                fontSize="4xl"
-                                color="#fff"
-                                letterSpacing={-1}
-                            >
-                                Hey!, I am Luciano.
-                            </Text>
-                            <Text
-                                fontFamily={theme.fonts.primary}
-                                fontSize="2xl"
-                                color="#fff"
-                            >
-                                I'm a fullstack developer and I love to create
-                                interactive things.
-                            </Text>
-                        </Flex>
-                        <Flex
-                            position={"absolute"}
-                            justifyContent="center"
-                            w="100%"
-                            h="100%"
+                            Hey!, I am Luciano.
+                        </Text>
+                        <Text
+                            fontFamily={theme.fonts.primary}
+                            fontSize="2xl"
+                            color="#fff"
                         >
-                            <Tesseract size={100} />
-                            <Tesseract size={300} />
-                        </Flex>
+                            I'm a fullstack developer and I love to create
+                            interactive things.
+                        </Text>
                     </Flex>
+                    <Flex
+                        position={"absolute"}
+                        justifyContent="flex-end"
+                        alignItems='center'
+                        w="100%"
+                        h="100%"
+                    >
+                        <Tesseract size={100} />
+                        <Tesseract size={300} />
+                    </Flex>
+                </Flex>
             </Flex>
         </>
     );

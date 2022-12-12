@@ -1,21 +1,23 @@
-import { Flex } from "@chakra-ui/react";
-import React, { useState } from "react";
-import LogoSVG from "./components/LogoSVG";
 import Homepage from "./views/Homepage";
-
+import AboutPage from "./views/AboutPage";
+import Header from "./components/Header";
+import { Flex, Grid } from "@chakra-ui/react";
 export const App = () => {
-    
     return (
         <>
-            <Flex w="100%" h="15vh" position="fixed">
-                <LogoSVG />
-            </Flex>
-            <Flex h="100vh" w="100vw" overflow="scroll">
-                <Flex h="200vh">
+            <Flex
+                flexDir="column"
+                maxW="100vw"
+                h="auto"
+                bg="#090909"
+                alignItems="center"
+            >
+                <Flex flexDir='column' w='100%'maxW='1600px' alignContent='center'>
+                    <Header />
                     <Homepage />
+                    <AboutPage />
                 </Flex>
             </Flex>
-            <Flex w="100vw" h="100vh" bg="red"></Flex>
         </>
     );
 };
